@@ -2,14 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+    }
 
 body {
-    background: white;
+    background: blanchedalmond;
     font-family: 'Courier New', monospace;
+    height: 500vh;
 }
 
 header {
+    background-color: darkturquoise;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,9 +19,9 @@ header {
     border-bottom: 2px solid black;
 }
 
-.logo img {
+/* .logo img {
     height: 40px;
-}
+} */
 
 nav {
     display: flex;
@@ -27,6 +29,7 @@ nav {
 }
 
 nav a {
+    background-color: rgb(17, 255, 0);
     text-decoration: none;
     color: black;
     border: 2px solid black;
@@ -48,7 +51,7 @@ h1 {
     margin-bottom: 40px;
 }
 
-.box {
+.box1 {
     border: 2px solid black;
     width: 220px;
     margin-left: 60px;
@@ -66,7 +69,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 6px 20px;
-    background: white;
+    background: rgb(11, 66, 67);
 }
 
 footer p {
