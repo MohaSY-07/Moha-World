@@ -1,58 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOHA WORLD</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MOHA WORLD — Home</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Moha Logo" />
+    </div>
 
-    <header>
-        <div class="logo">
-            <img src="logo.png" height="100px" width="200px" alt="Moha Logo">
-        </div>
+    <nav>
+      <!-- Home goes to index.html (current page) -->
+      <a href="index.html">Home</a>
+      <!-- Store and Sign in are separate pages -->
+      <a href="store.html">Store</a>
+      <a href="signin.html">Sign in</a>
+      <!-- Menu opens a popup modal on index.html -->
+      <button id="menuBtn" class="nav-btn" aria-haspopup="dialog" aria-controls="menuModal">Menu</button>
+    </nav>
+  </header>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#Store">Store</a>
-            <a href="#sign_in">Sign in</a>
-            <a href="#Menu">Menu</a>
-        </nav>
-    </header>
+  <main>
+    <!-- HOME SECTION -->
+    <section id="home" class="home-section">
+      <h1>WELCOME TO MOHA WORLD</h1>
+      <p>Explore tools, manage tasks, and more — click the cards below or use the menu.</p>
+    </section>
 
-    <main>
-        <h1>WELCOME TO MOHA WORLD</h1>
-        <!-- NEW: Grid of tool pages (links to the pages you requested) -->
-        <section class="tool-grid">
-            <h2>Open Tools</h2>
-            <div class="grid">
-                <a class="card" href="agecalculator.html">Agecalculator</a>
-                <a class="card" href="todo.html">TO DO LIST</a>
-                <a class="card" href="health.html">HEALTH &amp; FITNESS TRACKER</a>
-                <a class="card" href="learning.html">LEARNING ZONE</a>
-                <a class="card" href="money.html">MONEY MANAGER</a>
-                <a class="card" href="planner.html">PLANER / CALENDAR</a>
-                <a class="card" href="motivation.html">MOTIVATION</a>
-                <a class="card" href="relax.html">RELAX ZONE</a>
-                <a class="card" href="smalltools.html">SMALL TOOLS</a>
-                <a class="card" href="othertools.html">OTHERS TOOLS</a>
-                <a class="card" href="stats.html">STATS PAGE</a>
-                <a class="card" href="profile.html">PROFILE PAGE</a>
-            </div>
-        </section>
+    <!-- TOOL GRID SECTION -->
+    <section class="tool-grid">
+      <h2>Open Tools</h2>
+      <div class="grid">
+        <a class="card" href="agecalculator.html">Agecalculator</a>
+        <a class="card" href="todo.html">TO DO LIST</a>
+        <a class="card" href="health.html">HEALTH &amp; FITNESS TRACKER</a>
+        <a class="card" href="learning.html">LEARNING ZONE</a>
+        <a class="card" href="money.html">MONEY MANAGER</a>
+        <a class="card" href="planner.html">PLANER / CALENDAR</a>
+        <a class="card" href="motivation.html">MOTIVATION</a>
+        <a class="card" href="relax.html">RELAX ZONE</a>
+        <a class="card" href="smalltools.html">SMALL TOOLS</a>
+        <a class="card" href="othertools.html">OTHERS TOOLS</a>
+        <a class="card" href="stats.html">STATS PAGE</a>
+        <a class="card" href="profile.html">PROFILE PAGE</a>
+      </div>
+    </section>
+  </main>
 
-    </main>
+  <footer>
+    <p>Made by mohamad ©</p>
+    <div class="footer-links">
+      <a href="#">CONTACT</a>
+      <a href="#">About</a>
+      <a href="#">P-mode</a>
+      <a href="#">EN</a>
+    </div>
+  </footer>
 
-    <footer>
-        <p>Made by mohamad ©</p>
-        <div class="footer-links">
-            <a href="#">CONTACT</a>
-            <a href="#">About</a>
-            <a href="#">P-mode</a>
-            <a href="#">EN</a>
-        </div>
-    </footer>
+  <!-- MENU MODAL (popup) -->
+  <div id="menuModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-content" role="document">
+      <button class="modal-close" id="menuClose" aria-label="Close menu">✕</button>
+      <h3>Quick Menu</h3>
+      <ul class="modal-list">
+        <li><a href="agecalculator.html">Age Calculator</a></li>
+        <li><a href="todo.html">To-Do List</a></li>
+        <li><a href="health.html">Health Tracker</a></li>
+        <li><a href="learning.html">Learning Zone</a></li>
+        <li><a href="store.html">Visit Store</a></li>
+        <li><a href="signin.html">Sign in</a></li>
+      </ul>
+    </div>
+  </div>
 
+  <script>
+    // Menu modal open/close logic
+    (function () {
+      const menuBtn = document.getElementById('menuBtn');
+      const modal = document.getElementById('menuModal');
+      const closeBtn = document.getElementById('menuClose');
+      const overlay = modal.querySelector('.modal-overlay');
+
+      function openModal() {
+        modal.setAttribute('aria-hidden', 'false');
+        modal.classList.add('open');
+        // Move focus inside modal for accessibility
+        closeBtn.focus();
+        // prevent background scroll
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.setAttribute('aria-hidden', 'true');
+        modal.classList.remove('open');
+        menuBtn.focus();
+        document.body.style.overflow = '';
+      }
+
+      menuBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', closeModal);
+
+      // close on ESC
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      });
+
+      // close if a link inside modal is clicked (optional UX)
+      modal.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') closeModal();
+      });
+    })();
+  </script>
 </body>
 </html>
