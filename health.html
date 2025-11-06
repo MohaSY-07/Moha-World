@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HEALTH & FITNESS TRACKER - MOHA WORLD</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" height="100px" width="200px" alt="Moha Logo">
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#Store">Store</a>
+            <a href="#sign_in">Sign in</a>
+            <a href="#Menu">Menu</a>
+        </nav>
+    </header>
+
+    <main>
+      <h1>HEALTH &amp; FITNESS TRACKER</h1>
+      <p>Log steps, water, weight and quick workouts.</p>
+
+      <section class="health">
+        <label>Weight (kg): <input id="weight" type="number" step="0.1"></label><button onclick="save('weight')">Save</button><br>
+        <label>Steps: <input id="steps" type="number"></label><button onclick="save('steps')">Save</button><br>
+        <label>Water (ml): <input id="water" type="number"></label><button onclick="save('water')">Save</button><br>
+        <div id="healthLog"></div>
+      </section>
+
+      <p><a href="index.html">← Back to Home</a></p>
+    </main>
+
+    <footer>
+        <p>Made by mohamad ©</p>
+    </footer>
+
+<script>
+function save(key){
+  const el = document.getElementById(key);
+  const val = el.value;
+  if(!val) return;
+  const log = document.getElementById('healthLog');
+  const p = document.createElement('p');
+  p.textContent = key + ': ' + val + ' — ' + new Date().toLocaleString();
+  log.prepend(p);
+  el.value = '';
+}
+</script>
+
+</body>
+</html>

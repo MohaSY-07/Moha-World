@@ -8,22 +8,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Reem+Kufi+Fun:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="reem-kufi-fun">
-    <header>
-        <div class="logo">
-            <img src="logo.png" height="100px" width="200px" alt="Moha Logo">
-        </div>
+  <header>
+    <div class="logo">
+      <img src="logo.png" height="100px" width="200px" alt="Moha Logo">
+    </div>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#Store">Store</a>
-            <a href="#sign_in">Sign in</a>
-            <a href="#Menu">Menu</a>
-        </nav>
-    </header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#Store">Store</a>
+      <a href="#sign_in">Sign in</a>
+      <a href="#Menu">Menu</a>
+    </nav>
+  </header>
 
   <main style="text-align:center; margin-top: 50px;">
-    <p>Enter your birth year below:</p>
-    <input type="number" id="birthYear" placeholder="e.g. 2005" style="padding:6px; font-family:'Reem Kufi Fun';">
+    <p>Enter your birth date below:</p>
+    <input type="date" id="birthDate" style="padding:6px; font-family:'Reem Kufi Fun';">
     <button onclick="calculateAge()" style="padding:6px 12px; border:2px solid black; border-radius:6px; background:white; cursor:pointer;">Check Age</button>
 
     <p id="result" style="margin-top:20px; font-size:18px;"></p>
@@ -38,15 +38,33 @@
 
   <script>
     function calculateAge() {
-      const birthYear = document.getElementById('birthYear').value;
-      const year = new Date().getFullYear();
-      const age = year - birthYear;
-
-      if (!birthYear || birthYear > year || birthYear < 1900) {
-        document.getElementById('result').innerText = "Please enter a valid year.";
-      } else {
-        document.getElementById('result').innerText = "You are " + age + " years old!";
+      const birthDateInput = document.getElementById('birthDate').value;
+      if (!birthDateInput) {
+        document.getElementById('result').innerText = "Please enter your birth date.";
+        return;
       }
+
+      const birthDate = new Date(birthDateInput);
+      const today = new Date();
+
+      let years = today.getFullYear() - birthDate.getFullYear();
+      let months = today.getMonth() - birthDate.getMonth();
+      let days = today.getDate() - birthDate.getDate();
+
+      // تعديل الحساب عندما يكون اليوم أو الشهر لم يأتِ بعد في السنة الحالية
+      if (days < 0) {
+        months--;
+        const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+        days += prevMonth.getDate();
+      }
+
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      document.getElementById('result').innerText =
+        `You are ${years} years, ${months} months, and ${days} days old!`;
     }
   </script>
 </body>

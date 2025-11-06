@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LEARNING ZONE - MOHA WORLD</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" height="100px" width="200px" alt="Moha Logo">
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#Store">Store</a>
+            <a href="#sign_in">Sign in</a>
+            <a href="#Menu">Menu</a>
+        </nav>
+    </header>
+
+    <main>
+      <h1>LEARNING ZONE</h1>
+      <p>Create study cards and track progress.</p>
+
+      <section class="learning">
+        <textarea id="cardText" placeholder="Enter a quick note or flashcard"></textarea><br>
+        <button onclick="addCard()">Add Card</button>
+        <div id="cards"></div>
+      </section>
+
+      <p><a href="index.html">← Back to Home</a></p>
+    </main>
+
+    <footer>
+        <p>Made by mohamad ©</p>
+    </footer>
+
+<script>
+function addCard(){
+  const t = document.getElementById('cardText').value.trim();
+  if(!t) return;
+  const d = document.createElement('div');
+  d.className = 'card';
+  d.innerHTML = '<p>' + t + '</p><button onclick="this.parentNode.remove()">Remove</button>';
+  document.getElementById('cards').prepend(d);
+  document.getElementById('cardText').value = '';
+}
+</script>
+
+</body>
+</html>
