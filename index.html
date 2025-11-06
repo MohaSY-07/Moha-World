@@ -13,71 +13,101 @@
     </div>
 
     <nav>
-      <!-- Home goes to index.html (current page) -->
-      <a href="index.html">Home</a>
-      <!-- Store and Sign in are separate pages -->
-      <a href="store.html">Store</a>
-      <a href="signin.html">Sign in</a>
-      <!-- Menu opens a popup modal on index.html -->
-      <button id="menuBtn" class="nav-btn" aria-haspopup="dialog" aria-controls="menuModal">Menu</button>
+      <a data-en="Home" data-sv="Hem" data-ar="الرئيسية" href="index.html">Home</a>
+      <a data-en="Store" data-sv="Butik" data-ar="المتجر" href="store.html">Store</a>
+      <a data-en="Sign in" data-sv="Logga in" data-ar="تسجيل الدخول" href="signin.html">Sign in</a>
+      <button id="menuBtn" class="nav-btn" aria-haspopup="dialog" aria-controls="menuModal" 
+              data-en="Menu" data-sv="Meny" data-ar="القائمة">Menu</button>
     </nav>
   </header>
 
   <main>
-    <!-- HOME SECTION -->
     <section id="home" class="home-section">
-      <h1>WELCOME TO MOHA WORLD</h1>
-      <p>Explore tools, manage tasks, and more — click the cards below or use the menu.</p>
+      <h1 data-en="WELCOME TO MOHA WORLD" data-sv="VÄLKOMMEN TILL MOHA WORLD" data-ar="مرحباً بك في MOHA WORLD">WELCOME TO MOHA WORLD</h1>
+      <p data-en="Explore tools, manage tasks, and more — click the cards below or use the menu."
+         data-sv="Utforska verktyg, hantera uppgifter och mer – klicka på korten nedan eller använd menyn."
+         data-ar="استكشف الأدوات، أدر مهامك، والمزيد — انقر على البطاقات أدناه أو استخدم القائمة.">
+        Explore tools, manage tasks, and more — click the cards below or use the menu.
+      </p>
     </section>
 
-    <!-- TOOL GRID SECTION -->
     <section class="tool-grid">
-      <h2>Open Tools</h2>
+      <h2 data-en="Open Tools" data-sv="Tillgängliga verktyg" data-ar="الأدوات المتاحة">Open Tools</h2>
       <div class="grid">
-        <a class="card" href="agecalculator.html">Agecalculator</a>
-        <a class="card" href="todo.html">TO DO LIST</a>
-        <a class="card" href="health.html">HEALTH &amp; FITNESS TRACKER</a>
-        <a class="card" href="learning.html">LEARNING ZONE</a>
-        <a class="card" href="money.html">MONEY MANAGER</a>
-        <a class="card" href="planner.html">PLANER / CALENDAR</a>
-        <a class="card" href="motivation.html">MOTIVATION</a>
-        <a class="card" href="relax.html">RELAX ZONE</a>
-        <a class="card" href="smalltools.html">SMALL TOOLS</a>
-        <a class="card" href="othertools.html">OTHERS TOOLS</a>
-        <a class="card" href="stats.html">STATS PAGE</a>
-        <a class="card" href="profile.html">PROFILE PAGE</a>
+        <a class="card" data-en="Agecalculator" data-sv="Åldersräknare" data-ar="حاسبة العمر" href="agecalculator.html">Agecalculator</a>
+        <a class="card" data-en="TO DO LIST" data-sv="Att-göra lista" data-ar="قائمة المهام" href="todo.html">TO DO LIST</a>
+        <a class="card" data-en="HEALTH & FITNESS TRACKER" data-sv="Hälsa &amp; Fitness" data-ar="متتبع الصحة واللياقة" href="health.html">HEALTH & FITNESS TRACKER</a>
+        <a class="card" data-en="LEARNING ZONE" data-sv="Lärande Zon" data-ar="منطقة التعلم" href="learning.html">LEARNING ZONE</a>
+        <a class="card" data-en="MONEY MANAGER" data-sv="Pengahantering" data-ar="مدير الأموال" href="money.html">MONEY MANAGER</a>
+        <a class="card" data-en="PLANER / CALENDAR" data-sv="Planerare / Kalender" data-ar="المخطط / التقويم" href="planner.html">PLANER / CALENDAR</a>
+        <a class="card" data-en="MOTIVATION" data-sv="Motivation" data-ar="التحفيز" href="motivation.html">MOTIVATION</a>
+        <a class="card" data-en="RELAX ZONE" data-sv="Avkopplingszon" data-ar="منطقة الاسترخاء" href="relax.html">RELAX ZONE</a>
+        <a class="card" data-en="SMALL TOOLS" data-sv="Små verktyg" data-ar="أدوات صغيرة" href="smalltools.html">SMALL TOOLS</a>
+        <a class="card" data-en="OTHERS TOOLS" data-sv="Andra verktyg" data-ar="أدوات أخرى" href="othertools.html">OTHERS TOOLS</a>
+        <a class="card" data-en="STATS PAGE" data-sv="Statistik sida" data-ar="صفحة الإحصائيات" href="stats.html">STATS PAGE</a>
+        <a class="card" data-en="PROFILE PAGE" data-sv="Profilsida" data-ar="صفحة الملف الشخصي" href="profile.html">PROFILE PAGE</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Made by mohamad ©</p>
-  <div class="footer-links">
-    <a href="contact.html">CONTACT</a>
-    <a href="about.html">ABOUT</a>
-    <a href="#" id="p-mode-footer">P-mode</a>
-    <a href="#" id="lang-footer">EN</a>
-  </div>
+    <p data-en="Made by mohamad ©" data-sv="Gjort av mohamad ©" data-ar="صنع بواسطة محمد ©">Made by mohamad ©</p>
+    <div class="footer-links">
+      <a data-en="CONTACT" data-sv="KONTAKT" data-ar="تواصل" href="contact.html">CONTACT</a>
+      <a data-en="ABOUT" data-sv="OM" data-ar="حول" href="about.html">ABOUT</a>
+      <a href="#" id="p-mode-footer" data-en="P-mode" data-sv="P-läge" data-ar="وضع P">P-mode</a>
+      <a href="#" id="lang-footer">EN</a>
+    </div>
   </footer>
 
-  <!-- MENU MODAL (popup) -->
   <div id="menuModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-overlay" data-close></div>
     <div class="modal-content" role="document">
-      <button class="modal-close" id="menuClose" aria-label="Close menu">✕</button>
-      <h3>Quick Menu</h3>
+      <button class="modal-close" id="menuClose" aria-label="Close menu" data-en="✕" data-sv="✕" data-ar="✕">✕</button>
+      <h3 data-en="Quick Menu" data-sv="Snabbmeny" data-ar="القائمة السريعة">Quick Menu</h3>
       <ul class="modal-list">
-        <li><a href="agecalculator.html">Age Calculator</a></li>
-        <li><a href="todo.html">To-Do List</a></li>
-        <li><a href="health.html">Health Tracker</a></li>
-        <li><a href="learning.html">Learning Zone</a></li>
-        <li><a href="store.html">Visit Store</a></li>
-        <li><a href="signin.html">Sign in</a></li>
+        <li><a data-en="Age Calculator" data-sv="Åldersräknare" data-ar="حاسبة العمر" href="agecalculator.html">Age Calculator</a></li>
+        <li><a data-en="To-Do List" data-sv="Att-göra lista" data-ar="قائمة المهام" href="todo.html">To-Do List</a></li>
+        <li><a data-en="Health Tracker" data-sv="Hälsospårare" data-ar="متتبع الصحة" href="health.html">Health Tracker</a></li>
+        <li><a data-en="Learning Zone" data-sv="Lärande Zon" data-ar="منطقة التعلم" href="learning.html">Learning Zone</a></li>
+        <li><a data-en="Visit Store" data-sv="Besök Butik" data-ar="زيارة المتجر" href="store.html">Visit Store</a></li>
+        <li><a data-en="Sign in" data-sv="Logga in" data-ar="تسجيل الدخول" href="signin.html">Sign in</a></li>
       </ul>
     </div>
   </div>
 
-  
-  <script src="scripts.js"></script>
+  <script>
+    // ===== Dark Mode =====
+    const pModeBtns = document.querySelectorAll('#p-mode, #p-mode-footer');
+    pModeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+      });
+    });
+
+    // ===== Language Switch =====
+    const langBtns = document.querySelectorAll('#lang-btn, #lang-footer');
+    let langState = 'EN'; // EN → SV → AR
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if(langState === 'EN') langState = 'SV';
+        else if(langState === 'SV') langState = 'AR';
+        else langState = 'EN';
+        updateLanguage();
+      });
+    });
+
+    function updateLanguage() {
+      const allTextEls = document.querySelectorAll('[data-en]');
+      allTextEls.forEach(el => {
+        if(langState === 'EN') el.textContent = el.dataset.en;
+        else if(langState === 'SV') el.textContent = el.dataset.sv;
+        else el.textContent = el.dataset.ar;
+      });
+      document.body.lang = langState.toLowerCase();
+      langBtns.forEach(b => b.textContent = langState);
+    }
+  </script>
 </body>
 </html>
