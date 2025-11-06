@@ -44,3 +44,42 @@ function updateLanguage() {
     langBtns.forEach(b => b.textContent = 'AR');
   }
 }
+
+
+    // Menu modal open/close logic
+    (function () {
+      const menuBtn = document.getElementById('menuBtn');
+      const modal = document.getElementById('menuModal');
+      const closeBtn = document.getElementById('menuClose');
+      const overlay = modal.querySelector('.modal-overlay');
+
+      function openModal() {
+        modal.setAttribute('aria-hidden', 'false');
+        modal.classList.add('open');
+        // Move focus inside modal for accessibility
+        closeBtn.focus();
+        // prevent background scroll
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.setAttribute('aria-hidden', 'true');
+        modal.classList.remove('open');
+        menuBtn.focus();
+        document.body.style.overflow = '';
+      }
+
+      menuBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', closeModal);
+
+      // close on ESC
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      });
+
+      // close if a link inside modal is clicked (optional UX)
+      modal.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') closeModal();
+      });
+    })();

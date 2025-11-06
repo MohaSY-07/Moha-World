@@ -52,12 +52,12 @@
 
   <footer>
     <p>Made by mohamad ©</p>
-    <div class="footer-links">
-      <a href="#">CONTACT</a>
-      <a href="#">About</a>
-      <button id="p-mode">P-mode</button>
-      <button id="lang-btn">EN</button>
-    </div>
+  <div class="footer-links">
+    <a href="contact.html">CONTACT</a>
+    <a href="about.html">ABOUT</a>
+    <a href="#" id="p-mode-footer">P-mode</a>
+    <a href="#" id="lang-footer">EN</a>
+  </div>
   </footer>
 
   <!-- MENU MODAL (popup) -->
@@ -77,44 +77,7 @@
     </div>
   </div>
 
-  <script>
-    // Menu modal open/close logic
-    (function () {
-      const menuBtn = document.getElementById('menuBtn');
-      const modal = document.getElementById('menuModal');
-      const closeBtn = document.getElementById('menuClose');
-      const overlay = modal.querySelector('.modal-overlay');
-
-      function openModal() {
-        modal.setAttribute('aria-hidden', 'false');
-        modal.classList.add('open');
-        // Move focus inside modal for accessibility
-        closeBtn.focus();
-        // prevent background scroll
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeModal() {
-        modal.setAttribute('aria-hidden', 'true');
-        modal.classList.remove('open');
-        menuBtn.focus();
-        document.body.style.overflow = '';
-      }
-
-      menuBtn.addEventListener('click', openModal);
-      closeBtn.addEventListener('click', closeModal);
-      overlay.addEventListener('click', closeModal);
-
-      // close on ESC
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
-      });
-
-      // close if a link inside modal is clicked (optional UX)
-      modal.addEventListener('click', (e) => {
-        if (e.target.tagName === 'A') closeModal();
-      });
-    })();
-  </script>
+  
+  <script src="scripts.js"></script>
 </body>
 </html>
