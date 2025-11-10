@@ -6,7 +6,7 @@ pModeBtns.forEach(btn => {
   });
 });
 
-// ===== Language Switch =====
+//  تغير اللغة
 const langBtns = document.querySelectorAll('#lang-btn, #lang-footer');
 let langState = 'EN'; // EN → SV → AR
 
